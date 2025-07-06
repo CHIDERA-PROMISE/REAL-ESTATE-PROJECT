@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+</head>
+<body>
+    <div>
+
+        <div class="p-2 m-2 ">
+            <h1  class="text-center text-dark" style="font-family:serif;">ABOUT US</h1>
+        </div>    
+            <!-- Font Awesome (if you plan to use icons from it) -->
+  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 1%;
+      background: #f9f9f9;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: navy;
+      color: white;
+      padding: 15px 20px;
+    }
+
+    .logo {
+      font-size: 20px;
+    }
+
+    /* Hamburger icon styling */
+    .menu-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      display: none; /* Hidden on larger screens */
+    }
+
+    /* Navigation menu styles */
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    .menu a:hover {
+      color: #1abc9c;
+    }
+
+    /* Responsive styles for smaller screens */
+    @media (max-width: 768px) {
+      .menu {
+        display: none; /* Hidden by default on small screens */
+        flex-direction: column;
+        background-color: gray;
+        width: 100%;
+        position: absolute; /* Optional: position it over content */
+        top: 60px; /* Adjust based on navbar height */
+        left: 0;
+        padding: 2%;
+      }
+
+      .menu.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block; /* Show hamburger icon on small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar sticky-top">
+    <div class="logo"> <img src="images/google.svg" alt="logo" > </div>
+    <!-- Hamburger icon -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <!-- Navigation menu -->
+    <div class="menu" id="menu" style="font-family: serif;">
+      <a href="Index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="properties.html">Properties</a>
+      <a href="services.html">Services</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    }
+  </script>
+        
+
+        <div class="p-1 m-1" >
+            <h5 class="text-center" style="font-family: serif;">Welcome to Elegant Property's Limited, Your trusted partner in Real Estate</h5>
+            <h5 style="font-family: serif;">At Elegant Properties Limited, we are dedicated to redefining real estate standard through integrity, innovation, and service excellence. Founded with a vision to provide reliable and result-driven real estate solutions, We have grown into a trusted name in property development sales, leasing, and management. <br>Our mission is to bridge the gap between property owners and seekers by offering transprent, professional, and client-focused services. Whether you're buying your dream home, investing in lands. leasing commercial space, or managing a property, Ebson Property's Limited delvers tailored solution to meet your unique needs. <br>With a team of seasoned real estate professionals and a deep understanding of the market, We are committed to delivering value, maximizing investment returns, and ensuring peace of mind for our clients. At the heart of ur operation is a promise of trust, transparency, and long term satisfaction</h5>
+        </div>
+
+        <div class="row p-1 m-1">
+            <div class="col-sm-5">
+                <img src="images/ceo.jpg"  class="img-thumbnail">
+            </div>
+
+            <div class="col-sm-5">
+                <span  style="font-family: serif;">Olayinka Adesanya <br>Chief Executive Officer{CEO}, Elegant Properties Limited <BR></BR>Olayinka Adesanya is the visionary Chief Executive Officer of Ebson Properties Limited, a dynamic real estate company committed in redefining urban living and property investment across Nigeria. Under his leadership, the company has grown into a trusted name in the real estate sector, known for its integrity, innovation and unwavering commitment to client satisfaction. <BR></BR>With a deep understanding of the property market and passion for delivering value-driven solutions, Olayinka has led several landmark development. <BR></BR>Driven by excellence, Olayinka Adasanya belives in building more than homes-he builds communities. His leadership is grounded in transparency, professionalism and relentless pursuit of growth for clients, partners, and stakeholders alike.</span>
+            </div>
+        </div>
+
+         <div class="row" style="background-color: navy;"> 
+            <div class="col-sm-3 p-4">
+                <h3 class=" text-white" style="font-family: serif;" >ELEGANT PROPERTIES LIMITED </h3>
+                <span class=" text-white style" style="font-family: serif;">Elegant Properties Limited, we are dedicated to redefining real estate standard through integrity and inovations</span>
+            </div>
+
+            <div class="col-sm-3 p-1">
+              <ul  class="text-center text-white" style="list-style: none;">
+                <h3 style="font-family: serif;">@CONTACT US</h3>
+                <li>Facebook</li>
+                <li>Instagram</li>
+                <li>Twitter</li>
+                <li>Linkedin</li>
+            </ul>
+            </div>
+
+             <div class="col-sm-3 p-1">
+              <ul  class="text-center text-white" style="list-style: none; ">
+                <h3 style="font-family: serif;">QUICK LINK</h3>
+                <li><a class="text-white"  style="text-decoration: none;"  href="Index.html">Home</a></li>
+                <li><a class="text-white"  style="text-decoration: none;" href="about.html">About</a></li>
+                <li><a class="text-white"  style="text-decoration: none;" href="contact.html">Contact</a></li>
+                <li><a class="text-white"  style="text-decoration: none;" href="services.html">Servces</a></li>
+                <li><a class="text-white"  style="text-decoration: none;" href="properties.html">Properties</a></li>
+            </ul>
+            </div>
+
+            <div class="col-sm-3 px-3 py-1">
+                <h3 class=" text-white" style="font-family: serif;" >OUR PROPERTIES</h3>
+                <a href="properties.html"><img src="images/building 2.jpg" class="img-thumbnail"  alt=""></a>
+            </div>
+
+            <div class="col-sm-12 p-1">
+                <h3 class=" text-white text-center" style="font-family: serif;" >Copyright @2025 act 1999</h3>
+        
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</html>

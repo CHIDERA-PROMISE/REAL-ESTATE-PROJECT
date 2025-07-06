@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REAL ESTATE PROJECT</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/d487fb995a.js" crossorigin="anonymous"></script>
+  </head>
+<body>
+    <div>
+
+        <!-- Font Awesome (if you plan to use icons from it) -->
+  <link rel="stylesheet" href="//use.fontawesome.com/releases/v5.0.7/css/all.css" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 1%;
+      background-color: gray;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: navy;
+      color: white;
+      padding: 1%;
+    }
+
+    .logo {
+      font-size: 20px;
+    }
+
+    /* Hamburger icon styling */
+    .menu-toggle {
+      font-size: 24px;
+      cursor: pointer;
+      display: none; /* Hidden on larger screens */
+    }
+
+    /* Navigation menu styles */
+    .menu {
+      display: flex;
+      gap: 20px;
+      z-index: 1;
+    }
+
+    .menu a {
+      color: white;
+      text-decoration: none;
+      transition: 0.2s;
+    }
+
+    body {
+      margin: 0;
+      background-color: #e0e0e0;
+    }
+
+    .review-section {
+      width: 100%;
+      padding: 40px 20px;
+    }
+
+    /* Carousel inner as flex container */
+    .carousel-inner {
+      display: flex;
+    }
+
+    /* Style for each review card container */
+    .review-container {
+      flex: 0 0 auto;
+      width: 20%; /* 5 items per slide for large screens */
+      padding: 10px;
+    }
+    /* Hover effect on review container */
+    .review-container:hover {
+    background-color: #f5f5f3; /* Gold color, change as needed */
+    cursor: pointer;
+    border-radius: 8px; /* Optional for rounded edges */
+    }
+
+    /* Optional: smooth transition */
+    .review-container {
+    transition: background-color 0.3s ease;
+    }
+
+    /* Hover effect on review container */
+    .carousel-inner:hover {
+    background-color: #f7f6f2; /* Gold color, change as needed */
+    cursor: pointer;
+    border-radius: 8px; /* Optional for rounded edges */
+    }
+
+    /* Optional: smooth transition */
+    .carousel-inner {
+    transition: background-color 0.3s ease;
+    }
+    /* Hover effect on review container */
+    .carousel-inner:hover {
+    background-color: gray; /* Gold color, change as needed */
+    cursor: pointer;
+    border-radius: 8px; /* Optional for rounded edges */
+    }
+
+    /* Optional: smooth transition */
+    .carousel-inner {
+    transition: background-color 0.3s ease;
+    }
+
+    /* Responsive adjustments */
+    @media(max-width: 992px){
+      .review-container {
+        width: 25%; /* 4 items */
+      }
+    }
+    @media(max-width: 768px){
+      .review-container {
+        width: 33.3333%; /* 3 items */
+      }
+    }
+    @media(max-width: 576px){
+      .review-container {
+        width: 50%; /* 2 items */
+      }
+    }
+
+    /* Image styling */
+    .review-img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 8px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .review-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Caption styling */
+    .review-caption {
+      background-color: navy;
+      color: #f5ebeb;
+      padding: 0.75rem;
+      border-radius: 8px;
+      margin-top: 0.5rem;
+    }
+
+    /* Hide default Bootstrap controls for better control */
+    .carousel-control-prev,
+    .carousel-control-next {
+      z-index: 10;
+    }
+
+    .menu a:hover {
+      color: #1abc9c;
+    }   
+
+    /* Responsive styles for smaller screens */
+    @media (max-width: 768px) {
+      .menu {
+        display: none; /* Hidden by default on small screens */
+        flex-direction: column;
+        background-color: navy;
+        width: 100%;
+        position: absolute; /* Optional: position it over content */
+        top: 60px; /* Adjust based on navbar height */
+        left: 0;
+        padding: 2%;
+      }
+
+      .menu.show {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block; /* Show hamburger icon on small screens */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="navbar sticky-top" >
+    <div class="logo"> <img src="images/elegant 4.png" alt="logo"  style="height: 100px;"> </div>
+    <!-- Hamburger icon -->
+    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+    <!-- Navigation menu -->
+    <div class="menu" id="menu" style="font-family: serif;">
+      <a href="Index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+      <a href="properties.html">Properties</a>
+      <a href="services.html">Services</a>
+    </div>
+  </div>
+
+  <script>
+    function toggleMenu() {
+      document.getElementById("menu").classList.toggle("show");
+    } 
+  </script>
+
+         <!--Example of a carousel-->
+        <div id="album" class="carousel slide" data-bs-ride="carousel">
+            <!--Carousel indicators/dots-->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#album"  data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#album"  data-bs-slide-to="1" class="active"></button>
+                <button type="button" data-bs-target="#album"  data-bs-slide-to="2" class="active"></button>
+                <button type="button" data-bs-target="#album"  data-bs-slide-to="3" class="active"></button>
+                <button type="button" data-bs-target="#album"  data-bs-slide-to="4" class="active"></button>
+            </div>
+            <!--Carousel images/slide-->
+            <div class="carousel-inner">
+               <div class="carousel-item active">
+                    <img src="Images/real estate 2.jpg" class="p-2 m-2" style="opacity:1; height: 600px; width:99%;" alt="unsplash">
+                </div>
+
+                <div class="carousel-item active">
+                    <img src="Images/building4.jpg" class="p-2 m-2" style="opacity:1; height: 600px; width:99%;" alt="unsplash">
+                    <div class="carousel-caption text-white" style="font-family: serif;">
+                        <h3 >WE MAKE GREAT DEALS</h3>
+                        <span>Your Happiness Is Our Satisfaction</span>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="Images/building 5.jpg" class="p-2 m-2" style="opacity:1; height: 600px; width:99%;" alt="unsplash">
+                    <div class="carousel-caption text-white" style="font-family: serif;">
+                        <h3 >OUR PROJECTS</h3>
+                        <span>We Give The Best</span>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Images/building 6.jpg" class="p-2 m-2" style="opacity:1; height: 600px; width:99%;" alt="unsplash">
+                    <div class="carousel-caption text-white" style="font-family: serif;">
+                        <h3 >OUR PROJECTS</h3>
+                        <span>We Give The Best</span>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <img src="Images/building 7.jpg" class="p-2 m-2" style="opacity:1; height: 600px; width: 99%;" alt="unsplash">
+                    <div class="carousel-caption text-white" style="font-family: serif;">
+                        <h3>OUR PROJECTS</h3>
+                        <span>We Give The Best</span>
+                    </div>
+                </div>
+            </div>
+            <!--Carousel previous and next button-->
+            <button type="button" class="carousel-control-prev" data-bs-target="#album" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button type="button" class="carousel-control-next" data-bs-target="#album" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+
+        <div class="row p-3 m-3">
+              <a style="text-decoration: none; font-family: serif; color: navy; " href="about.html"><h2 class="text-center" >ABOUT US</h2></a>
+            <div class="col-sm-6">
+                <a href="about.html"><img src="images/building4.jpg" class="img-thumbnail" alt=""></a>
+            </div>
+
+             <div class="col-sm-6" style="text-decoration: none; font-family: serif; line-height: 1%;">
+                <h5>At Elegant Property's Limited, We are dedicated to redefining real estate standard  through integrity, innovation, and service excellence. Founded with a vision to provide reliable and result-driven real estate solutions, We have grown into a trusted name in property development sales, leasing, and management........<a href="about.html">Read More</a> </h5>
+            </div>
+        </div>
+
+        
+            
+           <div class="row p-3  m-3" style="font-family: serif;">
+                 <a style="text-decoration: none; font-family: serif; color: navy; " href="contact.html"><h2 class="text-center" >CONTACT US</h2></a>
+                
+                <div class="col-sm-6 my-1 text-dark" style="list-style: none; ">
+                    <h5> <i class="fa-solid fa-envelope"></i> elegantproperties@gmail.com </h5>
+                    <h5> <i class="fa-solid fa-phone-volume"></i> 09045338902 +234 09045338902</h5>
+                    <h5> <i class="fa-solid fa-location-dot"></i>  No.15b Upper Chime New Heaven..<a href="contact.html" style="font-size: small;">Read More</a></h5>
+                 </div>
+                
+                <div class="col-sm-6">
+                    <img src="images/call 2.jpg" class="img-thumbnail"  style="height: 300px;" alt="">
+                </div>
+
+            </div>       
+    
+
+            
+         <div class="row p-3 m-3" >
+            <a style="font-family: serif; text-decoration: none; color: navy; " href="properties.html"><h2 class="text-center ">PROPERTIES</h2></a>
+            <div class="col-sm-4">
+            <a href="properties.html"><img src="images/building 2.jpg" class="img-thumbnail"></a>
+            <h5 style="font-family: serif;">THIS IS A COMPLETED TWO UNIT DUPLEX.....<a href="properties.html">Read More</a></h5>
+            </div>
+                   
+            <div class="col-sm-4">
+                  <a href="properties.html"><img src="images/building 2.jpg" class="img-thumbnail"></a>
+                  <h5 style="font-family: serif;">THIS IS A COMPLETED TWO UNIT DUPLEX.....<a href="properties.html">Read More</a></h5>
+            </div>
+
+            <div class="col-sm-4" >
+                  <a href="properties.html"><img src="images/building 3.jpg" class="img-thumbnail"></a> 
+                  <h5 style="font-family: serif;">THIS IS A BUNGALOW, CURRENTLY UNDERGOING SOME RENOVATION.....<a href="properties.html">Read More</a></h5>
+            </div>  
+         </div>
+        
+         <div class="row p-3 m-3">
+            <a style="text-decoration: none;" href="services.html"><h2 style="font-family: serif; color: navy;" class="text-center" >OUR SERVICES</h2></a>
+         
+            <div class="col-sm-6">
+              <a href="services.html"><img src="images/repair 2.jpg" class="img-thumbnail" alt=""></a>
+            </div>
+
+            <div class="col-sm-6">
+              <h5 style="font-family: serif;" >At Elegant Property's Limited, We offer wide range of real estate services designed to help client to make smart property decisions with confidence. Whether you're buying your first home, developing a commercial property, or managing a rentals assets, we provide tailored solution backed by industry enterprise and local market knowledge......<a href="services.html">Read More</a> </h5>
+            </div>
+          </div>
+
+          <div id="gall" class="carousel-slide " data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <div class="container-sm shadow-lg ">
+                    <h2 class="text-center display-1" style="font-family: serif; color: navy; font-size: 50px;">BRANCHES</h2>
+                    <div class="row mb-4">
+                        <div class="col-sm-6">
+                            <img src="Images/lagos .jpg" class="img-fluid img-thumbnail my-5 mx-3" style="border-radius: 100%; height: 400px;">
+                        </div>
+                        <div class="col-sm-6">
+                            <h5 class="text-center my-5 px-5" style="font-family: serif;"> THIS IS OUR BRANCH IN LAGOS <BR></BR> ELEGANT PROPERTIES LTD.</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container-sm shadow-lg">
+                    <h4 class="display-1 text-center" style="font-family: serif; color: navy; font-size: 50px;">BRANCHES</h4>
+                    <div class="row mb-4">
+                        <div class="col-sm-6">
+                            <img src="Images/Sky .jpg" class="img-fluid img-thumbnail my-5 mx-3" style="border-radius: 100%; height: 400px;">
+                        </div>
+                        <div class="col-sm-6">
+                            <h5 class="text-center my-5 px-5" style="font-family: serif;">
+                                THIS OUR BRANCH IN ENUGU <BR></BR> ELEGANT PROPERTIES LTD.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div class="container-sm shadow-lg"> 
+                    <h4 class="display-1 text-center" style="font-family: serif; color: navy; font-size: 50px;">BRANCHES</h4>
+                    <div class="row mb-4">
+                        <div class="col-sm-6">
+                            <img src="Images/Banca .jpg" class="img-fluid img-thumbnail my-5 mx-3" style="border-radius: 100%; height: 400px;">
+                        </div>
+                        <div class="col-sm-6">
+                            <h5 class="text-center my-5 px-5" style="font-family: serif;">
+                                THIS OUR BRANCH IN ABUJA <BR></BR>ELEGANT PROPERTIES LTD.
+                            </h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="review-section"  style="font-family: serif; background-color: grey;" >
+       <div class="container text-center">
+          <h3>CLIENT REVEIWS</h3>
+      </div>
+
+  <div id="reviewsCarousel" class="carousel slide" data-bs-interval="3000" data-bs-ride="carousel">
+    <div class="carousel-inner">
+        
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="d-flex justify-content-center w-100">
+          <!-- Reviews -->
+          <div class="review-container">
+            
+            <img src="images/face 1.jpg" class="review-img" alt="Customer 1" />
+            <div class="review-caption">
+              <h6 class="mb-0">Alice Chibuike</h6>
+              <small>alice@example.com</small>
+              <p class="mt-2 mb-0">Excellent service and friendly staff!</p>
+            </div>
+          </div>
+          <div class="review-container">
+            <img src="images/face 2.jpg" class="review-img" alt="Customer 2" />
+            <div class="review-caption">
+              <h6 class="mb-0">Leo Ebuka</h6>
+              <small>leostar@example.com</small>
+              <p class="mt-2 mb-0">Loved the experience, highly recommended.</p>
+            </div>
+          </div>
+          <div class="review-container">
+            <img src="images/face 3.jpg" class="review-img" alt="Customer 3" />
+            <div class="review-caption">
+              <h6 class="mb-0">Mike Uche</h6>
+              <small>mikeblu@example.com</small>
+              <p class="mt-2 mb-0">Great quality and fast delivery. Love!</p>
+            </div>
+          </div>
+          <!-- Add more reviews if needed -->
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center w-100">
+          <div class="review-container">
+            <img src="images/face 4.jpg" class="review-img" alt="Customer 4" />
+            <div class="review-caption">
+              <h6 class="mb-0">Chidera Bop</h6>
+              <small>bop@example.com</small>
+              <p class="mt-2 mb-0">Very satisfied with the product. I will return</p>
+            </div>
+          </div>
+          <div class="review-container">
+            <img src="images/face 5.jpg" class="review-img" alt="Customer 5" />
+            <div class="review-caption">
+              <h6 class="mb-0">Jeto Lee</h6>
+              <small>jetlee@example.com</small>
+              <p class="mt-2 mb-0">Customer support was fantastic and not hostile!</p>
+            </div>
+          </div>
+          <div class="review-container">
+            <img src="images/face 6.jpg" class="review-img" alt="Customer 6" />
+            <div class="review-caption">
+              <h6 class="mb-0">San Davis</h6>
+              <small>san@example.com</small>
+              <p class="mt-2 mb-0">Will buy again, highly recommend to friends.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--slide 3-->
+    
+      <div class="carousel-item">
+        <div class="d-flex justify-content-center w-100">
+          <div class="review-container">
+            <img src="images/face 7.jpg" class="review-img" alt="Customer 7" />
+            <div class="review-caption">
+              <h6 class="mb-0">Ojo Sam</h6>
+              <small>ojosamy@example.com</small>
+              <p class="mt-2 mb-0">Very nice meeting them. I will publish.</p>
+            </div>
+          </div>
+          <div class="review-container">
+            <img src="images/face 8.jpg" class="review-img" alt="Customer 8" />
+            <div class="review-caption">
+              <h6 class="mb-0">Chinenye Okon</h6>
+              <small>okon@example.com</small>
+              <p class="mt-2 mb-0">After sales support was top notch!</p>
+            </div>
+          </div>
+          <div class="review-container">
+            <img src="images/face 9.jpg" class="review-img" alt="Customer 9" />
+            <div class="review-caption">
+              <h6 class="mb-0">Samson Uju</h6>
+              <small>ujusam@example.com</small>
+              <p class="mt-2 mb-0">Will tell my guys, highly recommend.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Additional slides as necessary -->
+    </div>
+
+    <!-- Controls (optional) -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev" aria-label="Previous">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next" aria-label="Next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  // Initialize Bootstrap Carousel with auto-slide
+  var myCarousel = document.querySelector('#reviewsCarousel');
+  var carousel = new bootstrap.Carousel(myCarousel, {
+    interval: 3000,
+    ride: 'carousel'
+  });
+  </script>
+        <div class="row" style="background-color: navy;">
+            <div class="col-sm-3 p-4">
+                <h3 class=" text-white" style="font-family: serif;" >ELEGANT PROPERTIES LIMITED </h3>
+                <span class=" text-white style" style="font-family: serif;">Elegant Properties Limited, we are dedicated to redefining real estate standard through integrity and inovations</span>
+            </div>
+
+            <div class="col-sm-3 p-4">
+              <ul  class="text-center text-white" style="list-style: none;">
+                <h5 style="font-family: serif;">@CONTACT US</h5>
+                <li style="font-family: serif;">Facebook</li>
+                <li style="font-family: serif;">Instagram</li>
+                <li style="font-family: serif;">Twitter</li>
+                <li style="font-family: serif;">Linkedin</li>
+            </ul>
+            </div>
+
+             <div class="col-sm-3 p-4">
+              <ul  class="text-center text-white" style="list-style: none; ">
+                <h5 style="font-family: serif;">QUICK LINK</h5>
+                <li><a class="text-white"  style="text-decoration: none; font-family: serif;"  href="Index.html">Home</a></li>
+                <li><a class="text-white"  style="text-decoration: none; font-family: serif;" href="about.html">About</a></li>
+                <li><a class="text-white"  style="text-decoration: none; font-family: serif;" href="contact.html">Contact</a></li>
+                <li><a class="text-white"  style="text-decoration: none; font-family: serif;" href="services.html">Servces</a></li>
+                <li><a class="text-white"  style="text-decoration: none; font-family: serif;" href="properties.html">Properties</a></li>
+            </ul>
+            </div>
+
+            <div class="col-sm-3 p-4" ></div>
+                <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+            <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+
+
+            <div class="col-sm-12 p-1">
+                <h5 class=" text-white text-center" style="font-family: serif;" >Copyright @2025 act 1999</h5>
+        
+            </div>
+            
+        </div>
+
+    </div>
+</body>
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</html>
